@@ -22,8 +22,8 @@ function App() {
           activeHref=""
           className="navbar"
           ease="power2.easeOut"
-          baseColor="#1c057d"
-          pillColor="#5217f0"
+          baseColor="#16064b"
+          pillColor="#4213c0"
           hoveredPillTextColor="#fff"
           pillTextColor="#fff"
         />
@@ -48,7 +48,15 @@ function App() {
         <p className="about">
           Intra-School <b>Graphic Design</b> Competition
         </p>
+        <button
+          onClick={() => {
+            window.open("https://www.google.com", "_blank");
+          }}
+        >
+          REGISTER
+        </button>
       </section>
+      <section id="categories"></section>
     </main>
   );
 }
