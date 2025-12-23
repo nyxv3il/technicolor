@@ -23,18 +23,18 @@ main::-webkit-scrollbar {
 }
 
 nav {
+  font-family: "Ubuntu Sans Mono", monospace;
   display: flex;
   width: 100%;
   justify-content: center;
   padding-top: 20px;
-  z-index: 1;
+  z-index: 2;
   position: relative;
 }
 
 section {
   display: flex;
   height: 100vh;
-  z-index: 0;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -43,6 +43,7 @@ section {
 
 #about img {
   width: 30rem;
+  z-index: 1;
 }
 
 #about .title {
@@ -57,6 +58,7 @@ section {
   letter-spacing: 0.02em;
   color: #fff;
   font-weight: bold;
+  z-index: 1;
 }
 
 #about .about {
@@ -64,19 +66,31 @@ section {
   font-size: 1.3rem;
   text-align: center;
   font-family: "Ubuntu Sans Mono", monospace;
+  z-index: 1;
 }
 
 #about .register {
-  color: #fff;
-  font-size: 2rem;
-  margin-top: 3rem;
-  font-weight: bold;
-  font-family: "Ubuntu Sans Mono", monospace;
-  padding: 0.8rem 1.5rem;
-  text-transform: uppercase;
-  background: #2c0e84;
+  position: relative;
+  overflow: hidden;
+  padding: 12px 28px;
+  color: white;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  border-radius: 12px;
+  transition: color 0.3s;
+  font-family: "Ubuntu Sans Mono", monospace;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.3rem;
+  border: 2px #fff solid;
+  border-radius: 8px;
+  z-index: 1;
+  transition: scale 0.4s ease-in-out;
+}
+
+#about .register:hover {
+  scale: 1.1;
 }
 
 @media screen and (max-width: 48rem) {

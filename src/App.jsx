@@ -27,8 +27,8 @@ function App() {
           baseColor="transparent"
           pillColor="transparent"
           // pillColor="#4213c0"
-          hoveredPillTextColor="#111"
-          pillTextColor="#111"
+          hoveredPillTextColor="#fff"
+          pillTextColor="#fff"
         />
       </nav>
       <section id="about">
