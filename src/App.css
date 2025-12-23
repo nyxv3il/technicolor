@@ -13,6 +13,7 @@ main {
 * {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  user-select: none;
 }
 
 main::-webkit-scrollbar {
@@ -26,14 +27,14 @@ nav {
   width: 100%;
   justify-content: center;
   padding-top: 20px;
-  z-index: 10;
+  z-index: 1;
   position: relative;
 }
 
 section {
   display: flex;
   height: 100vh;
-  z-index: 1;
+  z-index: 0;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -65,21 +66,17 @@ section {
   font-family: "Ubuntu Sans Mono", monospace;
 }
 
-#about button {
+#about .register {
   color: #fff;
   font-size: 2rem;
   margin-top: 3rem;
   font-weight: bold;
   font-family: "Ubuntu Sans Mono", monospace;
-  border: 2px solid #2c0e84;
-  padding: 0.5rem 1.2rem;
-  cursor: pointer;
-  background: transparent;
-  transition: background ease-in-out 0.2s, color ease-in-out 0.2s;
-}
-
-#about button:hover {
+  padding: 0.8rem 1.5rem;
+  text-transform: uppercase;
   background: #2c0e84;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
 @media screen and (max-width: 48rem) {

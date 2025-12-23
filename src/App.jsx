@@ -2,6 +2,7 @@ import "./App.css";
 import PillNav from "./components/PillNav";
 import logo from "./assets/computer.png";
 import Shuffle from "./components/Shuffle";
+import Magnet from "./components/Magnet";
 
 function App() {
   return (
@@ -22,10 +23,12 @@ function App() {
           activeHref=""
           className="navbar"
           ease="power2.easeOut"
-          baseColor="#16064b"
-          pillColor="#4213c0"
-          hoveredPillTextColor="#fff"
-          pillTextColor="#fff"
+          // baseColor="#16064b"
+          baseColor="transparent"
+          pillColor="transparent"
+          // pillColor="#4213c0"
+          hoveredPillTextColor="#111"
+          pillTextColor="#111"
         />
       </nav>
       <section id="about">
@@ -48,15 +51,20 @@ function App() {
         <p className="about">
           Intra-School <b>Graphic Design</b> Competition
         </p>
-        <button
-          onClick={() => {
-            window.open("https://www.google.com", "_blank");
-          }}
-        >
-          REGISTER
-        </button>
+        <Magnet padding={50} disabled={false} magnetStrength={10}>
+          <p
+            className="register"
+            onClick={() => {
+              window.open("https://www.example.com", "_blank");
+            }}
+          >
+            register
+          </p>
+        </Magnet>
       </section>
-      <section id="categories"></section>
+      <section id="categories">
+        <h1 className="sectionTitle">categories</h1>
+      </section>
     </main>
   );
 }
