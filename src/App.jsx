@@ -3,6 +3,7 @@ import PillNav from "./components/PillNav";
 import logo from "./assets/computer.png";
 import Shuffle from "./components/Shuffle";
 import Magnet from "./components/Magnet";
+import TextType from "./components/TextType";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
       </nav>
       <section id="about">
         <img src={logo} alt="Computer" />
-        <Shuffle
+        {/* <Shuffle
           tag="h1"
           className="title"
           text="TECHNICOLOR"
@@ -47,6 +48,14 @@ function App() {
           triggerOnce={true}
           triggerOnHover={true}
           respectReducedMotion={true}
+        /> */}
+        <TextType
+          text={["TECHNICOLOR", "HOSTED BY", "ANANDA COLLEGE"]}
+          typingSpeed={120}
+          pauseDuration={2000}
+          showCursor={true}
+          cursorCharacter="_"
+          className="title"
         />
         <p className="about">
           Intra-School <b>Graphic Design</b> Competition
