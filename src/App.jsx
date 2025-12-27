@@ -4,6 +4,11 @@ import logo from "./assets/computer.png";
 import Shuffle from "./components/Shuffle";
 import Magnet from "./components/Magnet";
 import TextType from "./components/TextType";
+import SpotlightCard from "./components/SpotlightCard";
+import poster from "./assets/poster.png";
+import manipulation from "./assets/manipulation.png";
+import mockup from "./assets/mockup.png";
+import video from "./assets/video.png";
 
 function App() {
   return (
@@ -73,6 +78,36 @@ function App() {
       </section>
       <section id="categories">
         <h1 className="sectionTitle">categories</h1>
+        <div className="cards">
+          <SpotlightCard
+            className="custom-spotlight-card category"
+            spotlightColor="#4213c0"
+          >
+            <h1 className="title">Poster Design</h1>
+            <img src={poster} alt="Poster Design" />
+          </SpotlightCard>
+          <SpotlightCard
+            className="custom-spotlight-card category"
+            spotlightColor="#4213c0"
+          >
+            <h1 className="title">Mockup</h1>
+            <img src={mockup} alt="Mockup" />
+          </SpotlightCard>
+          <SpotlightCard
+            className="custom-spotlight-card category"
+            spotlightColor="#4213c0"
+          >
+            <h1 className="title">Video Editing</h1>
+            <img src={video} alt="Video Editing" />
+          </SpotlightCard>
+          <SpotlightCard
+            className="custom-spotlight-card category"
+            spotlightColor="#4213c0"
+          >
+            <h1 className="title">Manipulation</h1>
+            <img src={manipulation} alt="Manipulation" />
+          </SpotlightCard>
+        </div>
       </section>
     </main>
   );
