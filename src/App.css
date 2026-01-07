@@ -100,6 +100,7 @@ section .sectionTitle {
   text-transform: uppercase;
   z-index: 1;
   margin-top: 3rem;
+  margin-bottom: 4rem;
   font-family: "Ubuntu Sans Mono", monospace;
   font-weight: bold;
 }
@@ -112,7 +113,6 @@ section .sectionTitle {
 #categories .cards {
   display: flex;
   width: 100%;
-  margin-top: 5rem;
   justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
@@ -141,6 +141,88 @@ section .sectionTitle {
 #categories .category img {
   z-index: 2;
   height: 15rem;
+}
+
+#rnr {
+  padding: 0 5rem;
+  margin-top: 3rem;
+}
+
+#rnr .rules {
+  width: 100%;
+  z-index: 2;
+}
+
+#rnr .rules .subtitle {
+  color: #fff;
+  text-transform: capitalize;
+  font-family: "Ubuntu Sans Mono", monospace;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+#rnr .rules ul {
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+#rnr .rules ul li {
+  font-family: "Ubuntu Sans Mono", monospace;
+  color: #fff;
+  list-style-type: disc;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+}
+
+#contact {
+  margin-top: 3rem;
+  padding: 0 5rem 5rem 5rem;
+}
+
+#contact .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+#contact .cards .contact {
+  z-index: 2;
+  background: #17171779;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 7rem;
+}
+
+#contact .cards .contact h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Ubuntu Sans Mono", monospace;
+  z-index: 10;
+}
+
+#contact .cards .contact a {
+  width: 3rem;
+  z-index: 10;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu Sans Mono", monospace;
+  font-size: 1.3rem;
+  padding: 1rem;
+  color: #fff;
+  z-index: 2;
 }
 
 @media screen and (max-width: 48rem) {
