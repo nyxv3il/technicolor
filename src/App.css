@@ -23,7 +23,7 @@ main::-webkit-scrollbar {
 }
 
 nav {
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -67,7 +67,7 @@ section {
   color: #fff;
   font-size: 1.3rem;
   text-align: center;
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   z-index: 1;
 }
 
@@ -79,7 +79,7 @@ section {
   background: transparent;
   cursor: pointer;
   transition: color 0.3s;
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   margin-top: 2rem;
   text-transform: uppercase;
   padding: 0.8rem 1.5rem;
@@ -101,12 +101,12 @@ section .sectionTitle {
   z-index: 1;
   margin-top: 3rem;
   margin-bottom: 4rem;
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   font-weight: bold;
 }
 
 #categories {
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   padding: 0 3rem;
 }
 
@@ -156,7 +156,7 @@ section .sectionTitle {
 #rnr .rules .subtitle {
   color: #fff;
   text-transform: capitalize;
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   font-weight: 500;
   font-size: 1.5rem;
 }
@@ -167,7 +167,7 @@ section .sectionTitle {
 }
 
 #rnr .rules ul li {
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   color: #fff;
   list-style-type: disc;
   font-size: 1rem;
@@ -203,7 +203,7 @@ section .sectionTitle {
 #contact .cards .contact h1 {
   color: #fff;
   font-size: 1.5rem;
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   z-index: 10;
 }
 
@@ -218,7 +218,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Poppins", monospace;
   font-size: 1.3rem;
   padding: 1rem;
   color: #fff;
