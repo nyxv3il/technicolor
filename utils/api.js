@@ -1,5 +1,5 @@
 const API_KEY =
-  "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";
+  "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";
 
 export async function askAI(query, context) {
   try {
@@ -16,7 +16,9 @@ export async function askAI(query, context) {
           messages: [
             {
               role: "system",
-              content: `You are the Technicolor '26 AI Assistant. Here are the rules: ${JSON.stringify(context.rules)}. Answer briefly and professionally in a cyberpunk terminal style.`,
+              content: `You are the Technicolor '26 AI Assistant. Here are the rules: ${JSON.stringify(
+                context.rules
+              )}. Answer briefly and professionally in a cyberpunk terminal style.`,
             },
             {
               role: "user",
@@ -24,7 +26,7 @@ export async function askAI(query, context) {
             },
           ],
         }),
-      },
+      }
     );
 
     const data = await response.json();
