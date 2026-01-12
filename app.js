@@ -228,7 +228,7 @@ function renderRegister(container) {
                 </div>
             </div>
 
-            <form onsubmit="window.open("https://chat.whatsapp.com/JFghNHpWKerJum3Um9KRTL?mode=wwt","_blank")" id="reg-form" class="space-y-10 font-mono" method="post" action="https://formspree.io/f/mlggrkkw">
+            <form id="reg-form" class="space-y-10 font-mono" method="post" action="https://formspree.io/f/mlggrkkw">
                 <div class="grid grid-cols-1 gap-10">
                     <div class="flex flex-col gap-3">
                         <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">OPERATOR_IDENTIFIER</label>
@@ -294,6 +294,22 @@ function renderRegister(container) {
 }
 
 function setupGlobalEvents() {
+  document.addEventListener("submit", (e) => {
+    const form = e.target.closest("#reg-form");
+    if (!form) return;
+
+    e.preventDefault();
+
+    window.open(
+      "https://chat.whatsapp.com/JFghNHpWKerJum3Um9KRTL?mode=wwt",
+      "_blank"
+    );
+
+    setTimeout(() => {
+      form.submit();
+    }, 100);
+  });
+
   document.addEventListener("click", (e) => {
     if (e.target.closest("#cta-register")) {
       transitionTo("register");
