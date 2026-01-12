@@ -2,12 +2,35 @@ import { renderNav } from "./components/navigation.js";
 import { initCRT } from "./components/pc.js";
 import { initTypewriter } from "./components/text_type.js";
 import { initSpotlight } from "./components/spotlight.js";
-import { askAI } from "./netlify/functions/ai.js";
 
 const state = {
   view: "home",
   content: null,
 };
+
+// Updated AI function to call Netlify serverless function
+async function askAI(query, context) {
+  try {
+    const response = await fetch("/.netlify/functions/ai", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query, context }),
+    });
+
+    const data = await response.json();
+
+    if (data.error) {
+      return data.error;
+    }
+
+    return data.message;
+  } catch (error) {
+    console.error("AI Error:", error);
+    return "CONNECTION_FAILURE: Unable to reach core processor.";
+  }
+}
 
 async function init() {
   try {
@@ -249,8 +272,15 @@ async function handleAISend() {
 
   input.value = "";
   history.innerHTML += `<div class="text-[#FF00FF] text-right font-bold"> > ${msg}</div>`;
+  history.innerHTML += `<div class="text-[#B0A8B9]">Processing...</div>`;
+  history.scrollTop = history.scrollHeight;
 
   const response = await askAI(msg, state.content);
+
+  // Remove "Processing..." message
+  const messages = history.querySelectorAll("div");
+  messages[messages.length - 1].remove();
+
   history.innerHTML += `<div class="text-[#00FF00]"> [AI]: ${response}</div>`;
   history.scrollTop = history.scrollHeight;
 }
