@@ -1,5 +1,5 @@
 import { renderNav } from "./components/navigation.js";
-import { initCRT } from "./components/crt_monitor.js";
+import { initCRT } from "./components/pc.js";
 import { initTypewriter } from "./components/text_type.js";
 import { initSpotlight } from "./components/spotlight.js";
 import { askAI } from "./utils/api.js";
@@ -68,7 +68,7 @@ function renderHome(container) {
                         <h3 class="orbitron text-xl mb-4 text-[#FF00FF] font-bold tracking-tight">${cat.title}</h3>
                         <p class="text-sm text-[#B0A8B9] leading-relaxed font-mono">${cat.description}</p>
                     </div>
-                `,
+                `
                   )
                   .join("")}
             </div>
@@ -92,12 +92,12 @@ function renderHome(container) {
                                     <li class="text-[#B0A8B9] flex gap-4 text-sm leading-relaxed">
                                         <span class="text-[#FF00FF] font-bold">>></span> ${item}
                                     </li>
-                                `,
+                                `
                                   )
                                   .join("")}
                             </ul>
                         </div>
-                    `,
+                    `
                       )
                       .join("")}
                 </div>
@@ -112,7 +112,7 @@ function renderHome(container) {
                     (c) => `
                     <a href="https://wa.me/${c.phone.replace(
                       new RegExp("\\+", "g"),
-                      "",
+                      ""
                     )}" target="_blank" class="spotlight-card flex items-center gap-8 p-8 rounded-2xl group">
                         <div class="w-20 h-20 rounded-full bg-[#4213C0]/20 flex items-center justify-center group-hover:bg-[#4213C0]/40 transition-all border border-[#4213C0]/30 shadow-inner">
                             <i data-lucide="message-circle" class="text-[#FF00FF] group-hover:scale-110 transition-transform"></i>
@@ -125,7 +125,7 @@ function renderHome(container) {
                             <p class="text-xs text-[#00FF00] font-mono mt-2 opacity-0 group-hover:opacity-100 transition-opacity">ESTABLISH_CONNECTION_</p>
                         </div>
                     </a>
-                `,
+                `
                   )
                   .join("")}
              </div>
@@ -193,8 +193,8 @@ function renderRegister(container) {
                                     <span class="text-xs uppercase tracking-widest group-hover:text-white transition-colors">Manipulation</span>
                                 </label>
                                 <label class="flex items-center gap-4 p-4 border border-white/5 bg-white/[0.02] rounded cursor-pointer hover:bg-[#4213C0]/10 hover:border-[#4213C0]/50 transition-all group">
-                                    <input name="mockup" type="checkbox" class="w-4 h-4 accent-[#FF00FF]">
-                                    <span class="text-xs uppercase tracking-widest group-hover:text-white transition-colors">Mockups</span>
+                                    <input name="3d" type="checkbox" class="w-4 h-4 accent-[#FF00FF]">
+                                    <span class="text-xs uppercase tracking-widest group-hover:text-white transition-colors">3D Design</span>
                                 </label>
                                 <label class="flex items-center gap-4 p-4 border border-white/5 bg-white/[0.02] rounded cursor-pointer hover:bg-[#4213C0]/10 hover:border-[#4213C0]/50 transition-all group">
                                     <input name="video" type="checkbox" class="w-4 h-4 accent-[#FF00FF]">
@@ -267,7 +267,7 @@ function transitionTo(view) {
       gsap.fromTo(
         "#main-content",
         { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
       );
     },
   });

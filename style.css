@@ -20,17 +20,14 @@ h3,
 
 /* CRT Effects */
 .crt-overlay {
-  background:
-    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
     linear-gradient(
       90deg,
       rgba(255, 0, 0, 0.03),
       rgba(0, 255, 0, 0.01),
       rgba(0, 0, 255, 0.03)
     );
-  background-size:
-    100% 3px,
-    3px 100%;
+  background-size: 100% 3px, 3px 100%;
   pointer-events: none;
 }
 
@@ -42,8 +39,7 @@ h3,
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%),
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%),
     linear-gradient(
       90deg,
       rgba(255, 0, 0, 0.06),
@@ -51,9 +47,7 @@ h3,
       rgba(0, 0, 255, 0.06)
     );
   z-index: 100;
-  background-size:
-    100% 2px,
-    3px 100%;
+  background-size: 100% 2px, 3px 100%;
   pointer-events: none;
   animation: flicker 0.15s infinite;
 }
@@ -82,8 +76,7 @@ h3,
 /* Glitch Title */
 .glitch {
   position: relative;
-  text-shadow:
-    0.05em 0 0 rgba(255, 0, 0, 0.75),
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
     -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
     0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
@@ -91,44 +84,35 @@ h3,
 
 @keyframes glitch {
   0% {
-    text-shadow:
-      0.05em 0 0 rgba(255, 0, 0, 0.75),
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
       -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
       -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   }
   14% {
-    text-shadow:
-      0.05em 0 0 rgba(255, 0, 0, 0.75),
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
       -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
       -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   }
   15% {
-    text-shadow:
-      -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
       0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
       -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
   }
   49% {
-    text-shadow:
-      -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
       0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
       -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
   }
   50% {
-    text-shadow:
-      0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-      0.05em 0 0 rgba(0, 255, 0, 0.75),
-      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
   }
   99% {
-    text-shadow:
-      0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-      0.05em 0 0 rgba(0, 255, 0, 0.75),
-      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
   }
   100% {
-    text-shadow:
-      -0.025em 0 0 rgba(255, 0, 0, 0.75),
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
       -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
       -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
   }
@@ -140,9 +124,7 @@ h3,
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(66, 19, 192, 0.3);
   overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .spotlight-card:hover {
@@ -218,4 +200,280 @@ h3,
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN IMPROVEMENTS
+   ======================================== */
+
+/* Mobile First Adjustments */
+@media (max-width: 640px) {
+  /* Hero Title */
+  .glitch {
+    font-size: 2.5rem !important;
+    line-height: 1.1;
+  }
+
+  /* Navigation - Compact mobile version */
+  nav {
+    padding: 0.75rem 1.5rem !important;
+    gap: 1rem !important;
+    width: auto;
+    max-width: 90vw;
+  }
+
+  /* Hide navigation links on mobile, keep only logo and register */
+  nav > div:nth-child(2) {
+    display: none !important;
+  }
+
+  /* Hide divider on mobile */
+  nav .h-6 {
+    display: none !important;
+  }
+
+  /* Make register button smaller */
+  #nav-reg {
+    padding: 0.5rem 1rem !important;
+    font-size: 9px !important;
+  }
+
+  /* Logo adjustments */
+  nav #nav-logo .w-8 {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+  }
+
+  /* CRT Container */
+  #crt-container img {
+    height: 15rem !important;
+  }
+
+  /* Register Button */
+  .register-btn {
+    padding: 1rem 2rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* Category Cards */
+  .spotlight-card h3 {
+    font-size: 1.125rem;
+  }
+
+  .spotlight-card .relative {
+    height: 12rem !important;
+  }
+
+  /* Section Headings */
+  h2 {
+    font-size: 1.25rem !important;
+    letter-spacing: 0.2em !important;
+    word-break: break-word;
+  }
+
+  /* Contact Cards */
+  .spotlight-card .w-20 {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  /* AI Assistant */
+  #ai-chat {
+    width: 90vw !important;
+    right: 50% !important;
+    transform: translateX(50%);
+  }
+
+  #ai-toggle {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .glitch {
+    font-size: 4rem !important;
+  }
+
+  #crt-container img {
+    height: 22rem !important;
+  }
+
+  /* Grid adjustments for categories */
+  #categories .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Navigation spacing */
+  nav {
+    padding: 0.75rem 2rem !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Section headings for tablet */
+  h2 {
+    font-size: 1.75rem !important;
+    letter-spacing: 0.3em !important;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .max-w-7xl {
+    max-width: 90rem;
+  }
+
+  #crt-container img {
+    height: 35rem !important;
+  }
+}
+
+/* Navbar Responsiveness */
+@media (max-width: 768px) {
+  #navbar-container {
+    top: 1rem;
+  }
+
+  /* Keep navigation horizontal but compact */
+  nav {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  nav a,
+  nav button {
+    font-size: 9px;
+  }
+}
+
+/* Form Responsiveness */
+@media (max-width: 640px) {
+  .terminal-input {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  form button[type="submit"] {
+    padding: 1.25rem !important;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+  }
+
+  /* Form labels */
+  label {
+    font-size: 9px !important;
+  }
+
+  /* Checkbox labels */
+  label span {
+    font-size: 10px !important;
+  }
+}
+
+/* Hero Section Responsive */
+@media (max-width: 640px) {
+  #about {
+    padding-top: 6rem !important;
+    min-height: 90vh;
+  }
+
+  #about p {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.2em !important;
+  }
+}
+
+/* Contact Section Mobile */
+@media (max-width: 640px) {
+  #contact .grid {
+    gap: 1.5rem !important;
+  }
+
+  #contact a {
+    padding: 1.5rem !important;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem !important;
+  }
+
+  #contact .text-2xl {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Rules Section Mobile */
+@media (max-width: 640px) {
+  #rnr .border-l-2 {
+    padding-left: 1rem !important;
+  }
+
+  #rnr h3 {
+    font-size: 1rem !important;
+  }
+
+  #rnr li {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Footer Mobile */
+@media (max-width: 640px) {
+  footer {
+    padding: 2rem 1rem !important;
+  }
+
+  footer div {
+    font-size: 8px !important;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  #about {
+    min-height: auto;
+    padding-top: 8rem !important;
+    padding-bottom: 4rem;
+  }
+
+  #crt-container {
+    max-width: 300px;
+  }
+
+  #crt-container img {
+    height: 12rem !important;
+  }
+
+  .glitch {
+    font-size: 2rem !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Prevent text overflow */
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
 }
