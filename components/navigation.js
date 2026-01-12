@@ -6,7 +6,7 @@ export function renderNav(currentView, onViewChange) {
         <nav class="bg-white/5 backdrop-blur-xl border border-white/10 px-8 py-3 rounded-full flex items-center gap-10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] pointer-events-auto">
             <div class="flex items-center gap-3 cursor-pointer group" id="nav-logo">
                 <div class="w-8 h-8 flex items-center justify-center rounded-lg transition-colors">
-                    <img src="/assets/pc.png" alt="logo"/>
+                    <img src="/assets/compressed/pc.png" alt="logo"/>
                 </div>
             </div>
             

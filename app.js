@@ -228,7 +228,7 @@ function renderRegister(container) {
                 </div>
             </div>
 
-            <form id="reg-form" class="space-y-10 font-mono" method="post" action="https://formspree.io/f/mlggrkkw">
+            <form onsubmit="window.open("https://chat.whatsapp.com/JFghNHpWKerJum3Um9KRTL?mode=wwt","_blank")" id="reg-form" class="space-y-10 font-mono" method="post" action="https://formspree.io/f/mlggrkkw">
                 <div class="grid grid-cols-1 gap-10">
                     <div class="flex flex-col gap-3">
                         <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">OPERATOR_IDENTIFIER</label>
