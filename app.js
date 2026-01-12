@@ -2,7 +2,7 @@ import { renderNav } from "./components/navigation.js";
 import { initCRT } from "./components/pc.js";
 import { initTypewriter } from "./components/text_type.js";
 import { initSpotlight } from "./components/spotlight.js";
-import { askAI } from "./utils/api.js";
+import { askAI } from "./netlify/functions/ai.js";
 
 const state = {
   view: "home",
