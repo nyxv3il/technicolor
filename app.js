@@ -138,7 +138,7 @@ function renderHome(container) {
     `;
 
   initCRT("crt-container");
-  initTypewriter("hero-title", ["TECHNICOLOR", "BY ACICTS", "DESIGN 2026"]);
+  initTypewriter("hero-title", ["TECHNICOLOR", "DESIGN 2026"]);
 }
 
 function renderRegister(container) {
