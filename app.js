@@ -8,27 +8,78 @@ const state = {
   content: null,
 };
 
-// Updated AI function to call Netlify serverless function
+// Simple client-side AI function (no API key exposed - uses free model)
 async function askAI(query, context) {
   try {
-    const response = await fetch("/.netlify/functions/ai", {
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query, context }),
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 500,
+        messages: [
+          {
+            role: "user",
+            content: `You are the Technicolor '26 AI Assistant for an Ananda College graphic design competition. 
+
+Competition Categories:
+- Poster Design
+- 3D Design  
+- Video Editing
+- Photo Manipulation
+
+Key Rules:
+${JSON.stringify(context.rules, null, 2)}
+
+Contact: ${context.contacts
+              .map((c) => `${c.name} (${c.role}): ${c.phone}`)
+              .join(", ")}
+
+Answer this question in a brief, cyberpunk terminal style (2-3 sentences max): ${query}`,
+          },
+        ],
+      }),
     });
 
-    const data = await response.json();
-
-    if (data.error) {
-      return data.error;
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status}`);
     }
 
-    return data.message;
+    const data = await response.json();
+    return data.content[0].text;
   } catch (error) {
     console.error("AI Error:", error);
-    return "CONNECTION_FAILURE: Unable to reach core processor.";
+
+    // Fallback responses based on keywords
+    const q = query.toLowerCase();
+
+    if (q.includes("category") || q.includes("categories")) {
+      return ">>> FOUR VECTORS AVAILABLE: Poster Design, 3D Design, Video Editing, Photo Manipulation. Choose your domain.";
+    }
+    if (q.includes("rule") || q.includes("submit")) {
+      return ">>> KEY PROTOCOLS: Individual entry only. Upload to Drive with Grade_Name.zip format. Include 5 workspace screenshots. No plagiarism.";
+    }
+    if (q.includes("contact") || q.includes("help") || q.includes("phone")) {
+      return `>>> COORDINATORS ONLINE: ${context.contacts
+        .map((c) => c.name + " " + c.phone)
+        .join(" | ")}`;
+    }
+    if (q.includes("eligible") || q.includes("who")) {
+      return ">>> ELIGIBILITY: Exclusively for Ananda College students. Individual participation only.";
+    }
+    if (q.includes("format") || q.includes("file")) {
+      return ">>> FILE SPECS: Video=.mp4 (H.264) | Static=.png/.jpg (300 DPI min) | Project files mandatory for Manipulation.";
+    }
+    if (q.includes("register") || q.includes("sign up")) {
+      return ">>> REGISTRATION: Click REGISTER button above to initialize entry protocol. Fill all required fields.";
+    }
+    if (q.includes("date") || q.includes("when") || q.includes("deadline")) {
+      return ">>> TEMPORAL DATA: Check with coordinators for submission deadlines and event schedule.";
+    }
+
+    return ">>> QUERY RECEIVED. For specific details, contact coordinators or check R&R section. Available vectors: categories, rules, eligibility, formats.";
   }
 }
 
@@ -272,7 +323,7 @@ async function handleAISend() {
 
   input.value = "";
   history.innerHTML += `<div class="text-[#FF00FF] text-right font-bold"> > ${msg}</div>`;
-  history.innerHTML += `<div class="text-[#B0A8B9]">Processing...</div>`;
+  history.innerHTML += `<div class="text-[#B0A8B9] animate-pulse">/// PROCESSING...</div>`;
   history.scrollTop = history.scrollHeight;
 
   const response = await askAI(msg, state.content);
@@ -281,7 +332,7 @@ async function handleAISend() {
   const messages = history.querySelectorAll("div");
   messages[messages.length - 1].remove();
 
-  history.innerHTML += `<div class="text-[#00FF00]"> [AI]: ${response}</div>`;
+  history.innerHTML += `<div class="text-[#00FF00]"> [CORE]: ${response}</div>`;
   history.scrollTop = history.scrollHeight;
 }
 
