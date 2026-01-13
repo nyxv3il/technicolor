@@ -122,7 +122,7 @@ function renderHome(container) {
                 </p>
                 <div class="pt-12">
                     <button id="cta-register" class="register-btn orbitron font-bold text-lg tracking-[0.3em]" style="pointer-events: none;">
-                        REGISTRATIONS CLOSED
+                        COMING SOON
                     </button>
                 </div>
             </div>
