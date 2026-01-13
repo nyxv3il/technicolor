@@ -244,11 +244,6 @@ h3,
     height: 1.75rem !important;
   }
 
-  /* CRT Container */
-  #crt-container img {
-    height: 15rem !important;
-  }
-
   /* Register Button */
   .register-btn {
     padding: 1rem 2rem;
@@ -297,10 +292,6 @@ h3,
     font-size: 4rem !important;
   }
 
-  #crt-container img {
-    height: 22rem !important;
-  }
-
   /* Grid adjustments for categories */
   #categories .grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -323,10 +314,6 @@ h3,
 @media (min-width: 1440px) {
   .max-w-7xl {
     max-width: 90rem;
-  }
-
-  #crt-container img {
-    height: 35rem !important;
   }
 }
 
@@ -442,10 +429,6 @@ h3,
     max-width: 300px;
   }
 
-  #crt-container img {
-    height: 12rem !important;
-  }
-
   .glitch {
     font-size: 2rem !important;
   }
@@ -475,5 +458,21 @@ section {
   body {
     padding-left: max(0px, env(safe-area-inset-left));
     padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
+#crt-container img {
+  height: 25rem !important;
+}
+
+@media screen and (max-width: 550px) {
+  #crt-container img {
+    height: 20rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #crt-container img {
+    height: 15rem !important;
   }
 }

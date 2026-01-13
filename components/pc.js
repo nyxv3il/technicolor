@@ -7,7 +7,7 @@ export function initCRT(containerId) {
             <!-- Glow background -->
             <div class="absolute inset-0 bg-[#4213C0] opacity-10 blur-[120px] animate-pulse"></div>
             
-            <img src="/assets/compressed/pc.png" alt="PC HOLO" style="height: 30rem;"/>
+            <img src="/assets/compressed/pc.png" alt="PC HOLO"/>
         </div>
     `;
 
