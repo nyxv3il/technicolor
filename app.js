@@ -121,8 +121,8 @@ function renderHome(container) {
                     Intra-School Graphic Design Competition
                 </p>
                 <div class="pt-12">
-                    <button id="cta-register" class="register-btn orbitron font-bold text-lg tracking-[0.3em]">
-                        REGISTER NOW
+                    <button id="cta-register" class="register-btn orbitron font-bold text-lg tracking-[0.3em]" style="pointer-events: none;">
+                        REGISTRATIONS CLOSED
                     </button>
                 </div>
             </div>
