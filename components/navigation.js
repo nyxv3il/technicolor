@@ -9,7 +9,7 @@ export function renderNav(currentView, onViewChange) {
                     <img src="/assets/compressed/pc.png" alt="logo"/>
                 </div>
             </div>
-            
+
             <div class="hidden md:flex items-center gap-8 text-[10px] orbitron font-bold tracking-widest text-[#B0A8B9]">
                 <a href="#" class="hover:text-white transition-colors">ABOUT</a>
                 <a href="#categories" class="hover:text-white transition-colors">CATEGORIES</a>
@@ -19,7 +19,7 @@ export function renderNav(currentView, onViewChange) {
 
             <div class="h-6 w-[1px] bg-white/10 hidden md:block"></div>
 
-            <button id="nav-reg" class="text-[10px] orbitron font-black tracking-widest px-6 py-2 bg-white text-[#0B0118] rounded-full hover:bg-[#4213C0] hover:text-white transition-all" style="pointer-events: none; background: #999;">
+            <button id="nav-reg" class="text-[10px] orbitron font-black tracking-widest px-6 py-2 bg-white text-[#0B0118] rounded-full hover:bg-[#4213C0] hover:text-white transition-all">
                 ${currentView === "home" ? "REGISTER" : "HOME"}
             </button>
         </nav>
