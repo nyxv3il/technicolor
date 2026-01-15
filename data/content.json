@@ -27,7 +27,8 @@
       "items": [
         "Exclusively for students of Ananda College.",
         "Individual participation only; no team entries.",
-        "Plagiarism will result in immediate termination."
+        "Plagiarism will result in immediate termination.",
+        "Using AI or AI content is strictly prohibited."
       ]
     },
     {
@@ -35,18 +36,94 @@
       "items": [
         "Upload to Google Drive with 'Anyone with link' permission.",
         "Format: Grade_Name.zip (e.g. 11_NaveenPerera.zip).",
-        "Include 5 workspace screenshots as proof of process."
-      ]
-    },
-    {
-      "title": "Technical Specs",
-      "items": [
-        "Video: .mp4 (H.264 format).",
-        "Static: .png or .jpg (minimum 300 DPI).",
-        "Project files mandatory for Manipulation category."
+        "Include 5 workspace screenshots as proof of process.",
+        "Submit both final output and project files."
       ]
     }
   ],
+  "categoryRules": {
+    "poster": [
+      {
+        "title": "Technical Specifications",
+        "items": [
+          "Format: .png or .jpg files",
+          "Minimum resolution: 300 DPI",
+          "Recommended size: A3 or larger",
+          "Color mode: RGB for digital, CMYK for print"
+        ]
+      },
+      {
+        "title": "Submission Requirements",
+        "items": [
+          "Include 5 workspace screenshots showing your design process",
+          "Submit project files (PSD, AI, or equivalent)",
+          "Upload to Google Drive with 'Anyone with link' permission",
+          "File naming: Grade_Name.zip (e.g., 11_NaveenPerera.zip)"
+        ]
+      }
+    ],
+    "3d": [
+      {
+        "title": "Technical Specifications",
+        "items": [
+          "Accepted formats: .obj, .fbx, .blend, or native project files",
+          "Include rendered images (PNG/JPG, 300 DPI minimum)",
+          "Provide at least 3 different angle renders",
+          "Maximum polygon count: 500k triangles"
+        ]
+      },
+      {
+        "title": "Submission Requirements",
+        "items": [
+          "Include 5 viewport screenshots showing modeling process",
+          "Submit both project files and final renders",
+          "Upload to Google Drive with 'Anyone with link' permission",
+          "File naming: Grade_Name.zip (e.g., 11_NaveenPerera.zip)"
+        ]
+      }
+    ],
+    "video": [
+      {
+        "title": "Technical Specifications",
+        "items": [
+          "Format: .mp4 (H.264 codec)",
+          "Resolution: Minimum 1080p (1920x1080)",
+          "Frame rate: 24fps, 30fps, or 60fps",
+          "Maximum duration: 3 minutes"
+        ]
+      },
+      {
+        "title": "Submission Requirements",
+        "items": [
+          "Include 5 timeline screenshots from your editing software",
+          "Upload to Google Drive with 'Anyone with link' permission",
+          "File naming: Grade_Name.zip (e.g., 11_NaveenPerera.zip)",
+          "Ensure final export includes audio (if applicable)"
+        ]
+      }
+    ],
+    "manipulation": [
+      {
+        "title": "Technical Specifications",
+        "items": [
+          "Format: .png or .jpg for final output",
+          "Minimum resolution: 300 DPI",
+          "Project files mandatory (PSD, XCF, or equivalent)",
+          "Include source images used in manipulation"
+        ]
+      },
+      {
+        "title": "Submission Requirements",
+        "items": [
+          "Submit both final image and editable project file",
+          "Include 5 screenshots showing manipulation layers/process",
+          "Provide list of sources for any stock images used",
+          "Upload to Google Drive with 'Anyone with link' permission",
+          "File naming: Grade_Name.zip (e.g., 11_NaveenPerera.zip)"
+        ]
+      }
+    ]
+  },
   "contacts": [
     {
       "name": "Tadeesha Nithesh",

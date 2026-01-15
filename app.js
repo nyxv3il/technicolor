@@ -133,8 +133,8 @@ function renderHome(container) {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 ${state.content.categories
                   .map(
-                    (cat) => `
-                    <div class="spotlight-card p-4 rounded-xl group cursor-pointer h-full flex flex-col">
+                    (cat, index) => `
+                    <div class="spotlight-card p-4 rounded-xl group cursor-pointer h-full flex flex-col category-card" data-category="${index}">
                         <div class="relative h-64 bg-black/40 rounded-lg mb-6 overflow-hidden">
                             <img src="${cat.image}" alt="${cat.title}" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#0B0118] to-transparent"></div>
@@ -185,7 +185,7 @@ function renderHome(container) {
                   .map(
                     (c) => `
                     <a href="https://wa.me/${c.phone.replace(
-                      new RegExp("\\+", "g"),
+                      /\+/g,
                       "",
                     )}" target="_blank" class="spotlight-card flex items-center gap-8 p-8 rounded-2xl group">
                         <div class="w-20 h-20 rounded-full bg-[#4213C0]/20 flex items-center justify-center group-hover:bg-[#4213C0]/40 transition-all border border-[#4213C0]/30 shadow-inner">
@@ -209,6 +209,21 @@ function renderHome(container) {
             <div class="opacity-20 text-[10px] tracking-[1em] orbitron uppercase mb-4">Ananda College ICT Society</div>
             <div class="text-[#B0A8B9] text-xs font-mono">© 2026 TECHNICOLOR CORE // ALL SYSTEMS OPERATIONAL</div>
         </footer>
+
+        <!-- Category Modal -->
+        <div id="category-modal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[200] hidden items-center justify-center p-4">
+            <div class="bg-[#0B0118] border-2 border-[#4213C0] rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-[0_0_50px_rgba(66,19,192,0.5)]">
+                <div class="bg-[#4213C0] p-6 flex items-center justify-between">
+                    <h2 id="modal-title" class="text-2xl font-black orbitron text-white tracking-wider uppercase"></h2>
+                    <button id="close-modal" class="text-white hover:text-[#FF00FF] transition-colors">
+                        <i data-lucide="x" size="28"></i>
+                    </button>
+                </div>
+                <div id="modal-content" class="p-8 overflow-y-auto max-h-[calc(90vh-120px)] scrollbar-hide">
+                    <!-- Content will be inserted here -->
+                </div>
+            </div>
+        </div>
     `;
 
   initCRT("crt-container");
@@ -324,11 +339,118 @@ function setupGlobalEvents() {
     if (e.target.closest("#ai-send")) {
       handleAISend();
     }
+
+    // Category card click handler
+    const categoryCard = e.target.closest(".category-card");
+    if (categoryCard) {
+      const categoryIndex = parseInt(categoryCard.dataset.category);
+      showCategoryModal(categoryIndex);
+    }
+
+    // Close modal handlers
+    if (e.target.closest("#close-modal")) {
+      closeCategoryModal();
+    }
+    if (e.target.id === "category-modal") {
+      closeCategoryModal();
+    }
   });
 
   document.getElementById("ai-input")?.addEventListener("keypress", (e) => {
     if (e.key === "Enter") handleAISend();
   });
+}
+
+function showCategoryModal(categoryIndex) {
+  const category = state.content.categories[categoryIndex];
+  const modal = document.getElementById("category-modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalContent = document.getElementById("modal-content");
+
+  if (!modal || !modalTitle || !modalContent) return;
+
+  // Set title
+  modalTitle.textContent = category.title;
+
+  // Category-specific rules
+  const categoryRules = getCategoryRules(categoryIndex);
+
+  // Build content
+  modalContent.innerHTML = `
+    <div class="space-y-8">
+      ${categoryRules
+        .map(
+          (section) => `
+        <div class="border-l-2 border-[#FF00FF] pl-6 py-2">
+          <h3 class="text-lg font-bold orbitron text-white mb-4 uppercase tracking-wider">${section.title}</h3>
+          <ul class="space-y-3 font-mono">
+            ${section.items
+              .map(
+                (item) => `
+              <li class="text-[#B0A8B9] flex gap-3 text-sm leading-relaxed">
+                <span class="text-[#00FF00] font-bold">>></span> ${item}
+              </li>
+            `,
+              )
+              .join("")}
+          </ul>
+        </div>
+      `,
+        )
+        .join("")}
+
+      <div class="pt-4 border-t border-[#4213C0]/30">
+        <p class="text-xs text-[#B0A8B9] font-mono text-center">
+          For complete rules, refer to the R&R section below
+        </p>
+      </div>
+    </div>
+  `;
+
+  // Show modal with animation
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+  gsap.fromTo(
+    modal.querySelector("div"),
+    { scale: 0.9, opacity: 0 },
+    { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" },
+  );
+
+  lucide.createIcons();
+}
+
+function closeCategoryModal() {
+  const modal = document.getElementById("category-modal");
+  if (!modal) return;
+
+  gsap.to(modal.querySelector("div"), {
+    scale: 0.9,
+    opacity: 0,
+    duration: 0.2,
+    onComplete: () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    },
+  });
+}
+
+function getCategoryRules(categoryIndex) {
+  // Map category index to the key in categoryRules
+  const categoryKeys = ["poster", "3d", "video", "manipulation"];
+  const categoryKey = categoryKeys[categoryIndex];
+
+  // Get category-specific rules from content.json
+  if (state.content.categoryRules && state.content.categoryRules[categoryKey]) {
+    return state.content.categoryRules[categoryKey];
+  }
+
+  // Fallback if no rules found
+  return [
+    {
+      title: "Rules Coming Soon",
+      items: ["Detailed rules for this category will be announced soon."],
+    },
+  ];
 }
 
 async function handleAISend() {
