@@ -22,11 +22,11 @@ async function askAI(query, context) {
         messages: [
           {
             role: "user",
-            content: `You are the Technicolor '26 AI Assistant for an Ananda College graphic design competition. 
+            content: `You are the Technicolor '26 AI Assistant for an Ananda College graphic design competition.
 
 Competition Categories:
 - Poster Design
-- 3D Design  
+- 3D Design
 - Video Editing
 - Photo Manipulation
 
@@ -142,7 +142,7 @@ function renderHome(container) {
                         <h3 class="orbitron text-xl mb-4 text-[#FF00FF] font-bold tracking-tight">${cat.title}</h3>
                         <p class="text-sm text-[#B0A8B9] leading-relaxed font-mono">${cat.description}</p>
                     </div>
-                `
+                `,
                   )
                   .join("")}
             </div>
@@ -166,12 +166,12 @@ function renderHome(container) {
                                     <li class="text-[#B0A8B9] flex gap-4 text-sm leading-relaxed">
                                         <span class="text-[#FF00FF] font-bold">>></span> ${item}
                                     </li>
-                                `
+                                `,
                                   )
                                   .join("")}
                             </ul>
                         </div>
-                    `
+                    `,
                       )
                       .join("")}
                 </div>
@@ -186,7 +186,7 @@ function renderHome(container) {
                     (c) => `
                     <a href="https://wa.me/${c.phone.replace(
                       new RegExp("\\+", "g"),
-                      ""
+                      "",
                     )}" target="_blank" class="spotlight-card flex items-center gap-8 p-8 rounded-2xl group">
                         <div class="w-20 h-20 rounded-full bg-[#4213C0]/20 flex items-center justify-center group-hover:bg-[#4213C0]/40 transition-all border border-[#4213C0]/30 shadow-inner">
                             <i data-lucide="message-circle" class="text-[#FF00FF] group-hover:scale-110 transition-transform"></i>
@@ -199,7 +199,7 @@ function renderHome(container) {
                             <p class="text-xs text-[#00FF00] font-mono mt-2 opacity-0 group-hover:opacity-100 transition-opacity">ESTABLISH_CONNECTION_</p>
                         </div>
                     </a>
-                `
+                `,
                   )
                   .join("")}
              </div>
@@ -234,7 +234,7 @@ function renderRegister(container) {
                         <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">OPERATOR_IDENTIFIER</label>
                         <input name="name" type="text" required class="terminal-input w-full" placeholder="Full Name...">
                     </div>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div class="flex flex-col gap-3">
                             <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">INITIALIZATION_DATE</label>
@@ -302,7 +302,7 @@ function setupGlobalEvents() {
 
     window.open(
       "https://chat.whatsapp.com/JFghNHpWKerJum3Um9KRTL?mode=wwt",
-      "_blank"
+      "_blank",
     );
 
     setTimeout(() => {
@@ -364,7 +364,7 @@ function transitionTo(view) {
       gsap.fromTo(
         "#main-content",
         { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
       );
     },
   });

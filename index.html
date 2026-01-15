@@ -1,99 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/assets/pc.ico" type="image/x-icon" />
-    <title>TECHNICOLOR '26 | ACICTS</title>
-    <meta
-      name="description"
-      content="Official website for Technicolor - Intra-School Graphic Designing competition hosted by Ananda College"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/assets/pc.ico" type="image/x-icon" />
+        <title>TECHNICOLOR '26 | ACICTS</title>
+        <meta
+            name="description"
+            content="Official website for Technicolor - Intra-School Graphic Designing competition hosted by Ananda College"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
 
-    <meta property="og:title" content="TECHNICOLOR'26" />
-    <meta
-      property="og:description"
-      content="Official website for Technicolor - Intra-School Graphic Designing competition hosted by Ananda College"
-    />
-    <meta property="og:image" content="/assets/compressed/pc_withbg.png" />
-    <meta property="og:url" content="https://technicolor.acicts.lk" />
-    <meta property="og:type" content="website" />
+        <meta property="og:title" content="TECHNICOLOR'26" />
+        <meta
+            property="og:description"
+            content="Official website for Technicolor - Intra-School Graphic Designing competition hosted by Ananda College"
+        />
+        <meta property="og:image" content="/assets/compressed/pc_withbg.png" />
+        <meta property="og:url" content="https://technicolor.acicts.lk" />
+        <meta property="og:type" content="website" />
 
-    <meta name="twitter:card" content="/assets/compressed/pc_withbg.png" />
-    <meta name="twitter:title" content="TECHNICOLOR'26" />
-    <meta
-      name="twitter:description"
-      content="Official website for Technicolor - Intra-School Graphic Designing competition hosted by Ananda College"
-    />
-    <meta name="twitter:image" content="/assets/compressed/pc_withbg.png" />
-  </head>
+        <meta name="twitter:card" content="/assets/compressed/pc_withbg.png" />
+        <meta name="twitter:title" content="TECHNICOLOR'26" />
+        <meta
+            name="twitter:description"
+            content="Official website for Technicolor - Intra-School Graphic Designing competition hosted by Ananda College"
+        />
+        <meta name="twitter:image" content="/assets/compressed/pc_withbg.png" />
+    </head>
 
-  <body
-    class="bg-[#0B0118] text-white overflow-x-hidden selection:bg-[#4213C0] selection:text-white"
-  >
-    <!-- Nav Container -->
-    <header
-      id="navbar-container"
-      class="fixed top-8 left-0 w-full flex justify-center z-[100]"
-    ></header>
+    <body
+        class="bg-[#0B0118] text-white overflow-x-hidden selection:bg-[#4213C0] selection:text-white"
+    >
+        <!-- Nav Container -->
+        <header
+            id="navbar-container"
+            class="fixed top-8 left-0 w-full flex justify-center z-[100]"
+        ></header>
 
-    <!-- Content Views -->
-    <main id="main-content" class="relative z-10"></main>
+        <!-- Content Views -->
+        <main id="main-content" class="relative z-10"></main>
 
-    <!-- AI Support Node -->
-    <div id="ai-assistant" class="fixed bottom-6 right-6 z-50">
-      <button
-        id="ai-toggle"
-        class="p-4 bg-[#4213C0] border border-[#FF00FF]/30 rounded-full shadow-[0_0_15px_rgba(66,19,192,0.5)] hover:scale-110 transition-transform"
-      >
-        <i data-lucide="bot"></i>
-      </button>
-      <div
-        id="ai-chat"
-        class="hidden absolute bottom-20 right-0 w-80 bg-[#0B0118] border border-[#4213C0] rounded-xl overflow-hidden flex flex-col shadow-2xl"
-      >
+        <!-- AI Support Node -->
+        <div id="ai-assistant" class="fixed bottom-6 right-6 z-50">
+            <button
+                id="ai-toggle"
+                class="p-4 bg-[#4213C0] border border-[#FF00FF]/30 rounded-full shadow-[0_0_15px_rgba(66,19,192,0.5)] hover:scale-110 transition-transform"
+            >
+                <i data-lucide="bot"></i>
+            </button>
+            <div
+                id="ai-chat"
+                class="hidden absolute bottom-20 right-0 w-80 bg-[#0B0118] border border-[#4213C0] rounded-xl overflow-hidden flex flex-col shadow-2xl"
+            >
+                <div
+                    class="bg-[#4213C0] p-3 text-xs font-bold tracking-widest uppercase flex justify-between"
+                >
+                    <span>Core Assistant</span>
+                    <span class="animate-pulse">● ONLINE</span>
+                </div>
+                <div
+                    id="chat-history"
+                    class="h-64 overflow-y-auto p-4 text-[13px] font-mono space-y-3 scrollbar-hide"
+                >
+                    <div class="text-[#B0A8B9]">
+                        Initialize protocol... Ready to assist with Technicolor
+                        '26 queries.
+                    </div>
+                </div>
+                <div class="p-3 border-t border-[#4213C0]/30 flex gap-2">
+                    <input
+                        type="text"
+                        id="ai-input"
+                        placeholder="Ask anything..."
+                        class="bg-black/40 border border-[#4213C0]/50 rounded px-2 py-1 text-xs w-full focus:outline-none focus:border-[#FF00FF]"
+                    />
+                    <button id="ai-send" class="text-[#FF00FF]">
+                        <i data-lucide="send" size="18"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global CRT Overlay -->
         <div
-          class="bg-[#4213C0] p-3 text-xs font-bold tracking-widest uppercase flex justify-between"
-        >
-          <span>Core Assistant</span>
-          <span class="animate-pulse">● ONLINE</span>
-        </div>
-        <div
-          id="chat-history"
-          class="h-64 overflow-y-auto p-4 text-[13px] font-mono space-y-3 scrollbar-hide"
-        >
-          <div class="text-[#B0A8B9]">
-            Initialize protocol... Ready to assist with Technicolor '26 queries.
-          </div>
-        </div>
-        <div class="p-3 border-t border-[#4213C0]/30 flex gap-2">
-          <input
-            type="text"
-            id="ai-input"
-            placeholder="Ask anything..."
-            class="bg-black/40 border border-[#4213C0]/50 rounded px-2 py-1 text-xs w-full focus:outline-none focus:border-[#FF00FF]"
-          />
-          <button id="ai-send" class="text-[#FF00FF]">
-            <i data-lucide="send" size="18"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+            class="crt-overlay pointer-events-none fixed inset-0 z-[9999]"
+        ></div>
 
-    <!-- Global CRT Overlay -->
-    <div class="crt-overlay pointer-events-none fixed inset-0 z-[9999]"></div>
-
-    <script type="module" src="app.js"></script>
-  </body>
+        <script type="module" src="app.js"></script>
+    </body>
 </html>

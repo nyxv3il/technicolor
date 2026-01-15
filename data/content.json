@@ -49,13 +49,23 @@
   ],
   "contacts": [
     {
+      "name": "Tadeesha Nithesh",
+      "role": "President",
+      "phone": "+94769307320"
+    },
+    {
+      "name": "Pulitha Sethnindu",
+      "role": "Secretary",
+      "phone": "+94765785065"
+    },
+    {
       "name": "Manuth Ranawaka",
-      "role": "Coordinator",
+      "role": "Project Coordinator",
       "phone": "+94773133499"
     },
     {
       "name": "Sandith Tharul",
-      "role": "Secretary",
+      "role": "Project Secretary",
       "phone": "+94727871453"
     }
   ]
