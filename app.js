@@ -122,7 +122,7 @@ function renderHome(container) {
                 </p>
                 <div class="pt-12">
                     <button id="cta-register" class="register-btn orbitron font-bold text-lg tracking-[0.3em]">
-                    SUBMIT
+                    SUBMIT NOW
                     </button>
                 </div>
             </div>
