@@ -3,22 +3,22 @@
     {
       "title": "Poster Design",
       "image": "https://www.shutterstock.com/image-photo/hands-artist-selecting-color-on-600nw-2011885790.jpg",
-      "description": "To be announced"
+      "description": "Design a social media poster based on the theme \"Digital Life.\""
     },
     {
       "title": "3D Design",
       "image": "https://verpex.com/assets/uploads/images/blog/Is-Selling-3d-Models-Profitable.webp?v=1713956983",
-      "description": "To be announced"
+      "description": "Create a 3D model of a sci-fi vehicle or futuristic device."
     },
     {
       "title": "Video Editing",
       "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80",
-      "description": "To be announced"
+      "description": "Create a movie trailer video based on the theme \"A Day in the Future.\""
     },
     {
       "title": "Photo Manipulation",
       "image": "https://i.ytimg.com/vi/dl9TBrenWK8/maxresdefault.jpg",
-      "description": "To be announced"
+      "description": "Create a photo manipulation based on the theme \"Nature Reimagined.\""
     }
   ],
   "rules": [
@@ -28,7 +28,8 @@
         "Exclusively for students of Ananda College.",
         "Individual participation only; no team entries.",
         "Plagiarism will result in immediate termination.",
-        "Using AI or AI content is strictly prohibited."
+        "Using AI or AI content is strictly prohibited.",
+        "A participant may take part in a maximum of two categories."
       ]
     },
     {
@@ -37,7 +38,8 @@
         "Upload to Google Drive with 'Anyone with link' permission.",
         "Format: Grade_Name.zip (e.g. 11_NaveenPerera.zip).",
         "Include 5 workspace screenshots as proof of process.",
-        "Submit both final output and project files."
+        "Submit both final output and project files.",
+        "Submission Deadline Will Be On February 2nd, 2026"
       ]
     }
   ],
@@ -45,41 +47,74 @@
     "poster": [
       {
         "title": "Technical Specifications",
-        "items": ["To be announced."]
+        "items": [
+          "Task: Design a social media poster based on the theme \"Digital Life.\"",
+          "Poster must be digitally designed.",
+          "Size: A3 (Portrait or Landscape).",
+          "Text usage should be minimal and meaningful."
+        ]
       },
       {
         "title": "Submission Requirements",
-        "items": ["To be announced."]
+        "items": [
+          "Stock images, icons, and fonts are allowed.",
+          "File format: JPG / PNG / PDF (High Resolution)."
+        ]
       }
     ],
     "3d": [
       {
         "title": "Technical Specifications",
-        "items": ["To be announced."]
+        "items": [
+          "Task: Create a 3D model of a sci-fi vehicle or futuristic device.",
+          "Models must be originally created by the participant.",
+          "Any 3D software may be used.",
+          "Pre-made models are not allowed."
+        ]
       },
       {
         "title": "Submission Requirements",
-        "items": ["To be announced."]
+        "items": [
+          "Rendered images (minimum 2 angles)",
+          "File format: JPG / PNG for renders."
+        ]
       }
     ],
     "video": [
       {
         "title": "Technical Specifications",
-        "items": ["To be announced."]
+        "items": [
+          "Task: Create a movie trailer video based on the theme \"A Day in the Future.\"",
+          "Duration: 30 seconds – 2 minutes.",
+          "Videos may include motion graphics, effects, transitions, and sound design.",
+          "Stock footage, music, and sound effects are allowed."
+        ]
       },
       {
         "title": "Submission Requirements",
-        "items": ["To be announced."]
+        "items": [
+          "Content must be appropriate for a school environment.",
+          "File format: MP4 (Recommended resolution: 1080p)."
+        ]
       }
     ],
     "manipulation": [
       {
         "title": "Technical Specifications",
-        "items": ["To be announced."]
+        "items": [
+          "Task: Create a photo manipulation based on the theme \"Nature Reimagined.\"",
+          "Submissions must be digitally manipulated images.",
+          "Heavy editing, compositing, and surreal concepts are encouraged.",
+          "Stock images may be used freely.",
+          "The final image must align clearly with the chosen theme."
+        ]
       },
       {
         "title": "Submission Requirements",
-        "items": ["To be announced."]
+        "items": [
+          "File format: JPG / PNG (High Quality).",
+          "Any visible watermark or signature is not allowed."
+        ]
       }
     ]
   },

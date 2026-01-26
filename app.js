@@ -73,10 +73,10 @@ Answer this question in a brief, cyberpunk terminal style (2-3 sentences max): $
       return ">>> FILE SPECS: Video=.mp4 (H.264) | Static=.png/.jpg (300 DPI min) | Project files mandatory for Manipulation.";
     }
     if (q.includes("register") || q.includes("sign up")) {
-      return ">>> REGISTRATION: Click REGISTER button above to initialize entry protocol. Fill all required fields.";
+      return ">>> SUBMISSION: Click SUBMIT button above to initialize entry protocol. Fill all required fields.";
     }
     if (q.includes("date") || q.includes("when") || q.includes("deadline")) {
-      return ">>> TEMPORAL DATA: Check with coordinators for submission deadlines and event schedule.";
+      return ">>> TEMPORAL DATA: Submission deadline is on .";
     }
 
     return ">>> QUERY RECEIVED. For specific details, contact coordinators or check R&R section. Available vectors: categories, rules, eligibility, formats.";
@@ -122,7 +122,7 @@ function renderHome(container) {
                 </p>
                 <div class="pt-12">
                     <button id="cta-register" class="register-btn orbitron font-bold text-lg tracking-[0.3em]">
-                      REGISTER NOW
+                    SUBMIT
                     </button>
                 </div>
             </div>
@@ -243,7 +243,7 @@ function renderRegister(container) {
                 </div>
             </div>
 
-            <form id="reg-form" class="space-y-10 font-mono" method="post" action="https://formspree.io/f/mlggrkkw">
+            <form id="reg-form" class="space-y-10 font-mono" method="post" action="https://formspree.io/f/mvzaaego">
                 <div class="grid grid-cols-1 gap-10">
                     <div class="flex flex-col gap-3">
                         <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">OPERATOR_IDENTIFIER</label>
@@ -252,49 +252,19 @@ function renderRegister(container) {
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div class="flex flex-col gap-3">
-                            <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">INITIALIZATION_DATE</label>
-                            <input name="bday" type="text" required class="terminal-input w-full" placeholder="Birthday (eg: 25/01/2008)">
-                        </div>
-                        <div class="flex flex-col gap-3">
                             <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">GRADE_TIER</label>
-                            <select name="grade" class="terminal-input w-full">
-                                <option>Grade 06</option>
-                                <option>Grade 07</option>
-                                <option>Grade 08</option>
-                                <option>Grade 09</option>
-                                <option>Grade 10</option>
-                                <option>Grade 11</option>
-                                <option>Grade 12</option>
-                                <option>Grade 13</option>
+                            <select name="category" class="terminal-input w-full">
+                                <option>3D Modeling</option>
+                                <option>Poster Design</option>
+                                <option>Photo Manipulation</option>
+                                <option>Video Editing</option>
                             </select>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col gap-6">
-                        <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">COMPETITION_VECTORS</label>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <label class="flex items-center gap-4 p-4 border border-white/5 bg-white/[0.02] rounded cursor-pointer hover:bg-[#4213C0]/10 hover:border-[#4213C0]/50 transition-all group">
-                                    <input name="poster" type="checkbox" class="w-4 h-4 accent-[#FF00FF]">
-                                    <span class="text-xs uppercase tracking-widest group-hover:text-white transition-colors">Poster Design</span>
-                                </label>
-                                <label class="flex items-center gap-4 p-4 border border-white/5 bg-white/[0.02] rounded cursor-pointer hover:bg-[#4213C0]/10 hover:border-[#4213C0]/50 transition-all group">
-                                    <input name="manipulation" type="checkbox" class="w-4 h-4 accent-[#FF00FF]">
-                                    <span class="text-xs uppercase tracking-widest group-hover:text-white transition-colors">Manipulation</span>
-                                </label>
-                                <label class="flex items-center gap-4 p-4 border border-white/5 bg-white/[0.02] rounded cursor-pointer hover:bg-[#4213C0]/10 hover:border-[#4213C0]/50 transition-all group">
-                                    <input name="3d" type="checkbox" class="w-4 h-4 accent-[#FF00FF]">
-                                    <span class="text-xs uppercase tracking-widest group-hover:text-white transition-colors">3D Design</span>
-                                </label>
-                                <label class="flex items-center gap-4 p-4 border border-white/5 bg-white/[0.02] rounded cursor-pointer hover:bg-[#4213C0]/10 hover:border-[#4213C0]/50 transition-all group">
-                                    <input name="video" type="checkbox" class="w-4 h-4 accent-[#FF00FF]">
-                                    <span class="text-xs uppercase tracking-widest group-hover:text-white transition-colors">Video Editing</span>
-                                </label>
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-3">
                         <label class="text-[10px] uppercase tracking-[0.4em] text-[#4213C0] font-bold">COMM_CHANNEL (WA)</label>
-                        <input name="number" type="tel" required class="terminal-input w-full" placeholder="+94 7X XXX XXXX">
+                        <input name="link" type="url" required class="terminal-input w-full" placeholder="Project URL">
                     </div>
                 </div>
 
