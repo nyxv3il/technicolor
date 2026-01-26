@@ -285,11 +285,6 @@ function setupGlobalEvents() {
 
     e.preventDefault();
 
-    window.open(
-      "https://chat.whatsapp.com/JFghNHpWKerJum3Um9KRTL?mode=wwt",
-      "_blank",
-    );
-
     setTimeout(() => {
       form.submit();
     }, 100);
