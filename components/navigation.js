@@ -19,15 +19,11 @@ export function renderNav(currentView, onViewChange) {
 
             <div class="h-6 w-[1px] bg-white/10 hidden md:block"></div>
 
-            <button id="nav-reg" class="text-[10px] orbitron font-black tracking-widest px-6 py-2 bg-white text-[#0B0118] rounded-full hover:bg-[#4213C0] hover:text-white transition-all">
-                ${currentView === "home" ? "SUBMIT NOW" : "HOME"}
+            <button class="text-[10px] orbitron font-black tracking-widest px-6 py-2 rounded-full bg-gray-600 text-gray-400 cursor-not-allowed" disabled>
+                CLOSED
             </button>
         </nav>
     `;
-
-  document.getElementById("nav-reg").addEventListener("click", () => {
-    onViewChange(currentView === "home" ? "register" : "home");
-  });
 
   document.getElementById("nav-logo").addEventListener("click", () => {
     onViewChange("home");
