@@ -102,6 +102,8 @@ function renderView() {
 
   if (state.view === "home") {
     renderHome(container);
+  } else if (state.view === "leaderboard") {
+    renderLeaderboard(container);
   } else {
     renderRegister(container);
   }
@@ -274,6 +276,37 @@ function renderRegister(container) {
                     </button>
                 </div>
             </form>
+        </section>
+    `;
+}
+
+function renderLeaderboard(container) {
+  const leaderboard = state.content.leaderboard;
+
+  container.innerHTML = `
+        <section class="min-h-screen pt-48 pb-24 px-4 max-w-5xl mx-auto">
+            <div class="mb-16 text-center">
+                <h1 class="text-5xl font-black orbitron italic text-white tracking-tighter">${leaderboard.title}</h1>
+                <p class="text-[#00FF00] font-mono text-sm mt-2">${leaderboard.description}</p>
+            </div>
+
+            <div class="bg-black/20 border border-white/10 rounded-lg p-8">
+                ${leaderboard.winners.length === 0 
+                ? `<p class="text-center text-gray-400 font-mono">The leaderboard is currently empty. Winners will be posted soon!</p>`
+                : `
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    ${leaderboard.winners.map(winner => `
+                        <div class="border border-purple-500/20 bg-purple-900/10 p-6 rounded-lg text-center">
+                            <div class="text-sm text-purple-300 orbitron tracking-widest">${winner.category}</div>
+                            <div class="text-2xl font-bold text-white orbitron my-2">${winner.name}</div>
+                            <div class="text-lg text-yellow-400 font-bold orbitron">Rank: ${winner.rank}</div>
+                            <div class="text-xs text-gray-400 font-mono mt-1">Grade ${winner.grade}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                `
+                }
+            </div>
         </section>
     `;
 }

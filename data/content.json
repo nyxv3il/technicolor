@@ -139,5 +139,10 @@
       "role": "Project Secretary",
       "phone": "+94727871453"
     }
-  ]
+  ],
+  "leaderboard": {
+    "title": "LEADERBOARD",
+    "description": "Top contenders in the Technicolor '26 competition. Winners will be announced soon.",
+    "winners": []
+  }
 }

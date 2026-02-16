@@ -2,6 +2,8 @@ export function renderNav(currentView, onViewChange) {
   const navContainer = document.getElementById("navbar-container");
   if (!navContainer) return;
 
+  const onHome = currentView === "home";
+
   navContainer.innerHTML = `
         <nav class="bg-white/5 backdrop-blur-xl border border-white/10 px-8 py-3 rounded-full flex items-center gap-10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] pointer-events-auto">
             <div class="flex items-center gap-3 cursor-pointer group" id="nav-logo">
@@ -11,10 +13,11 @@ export function renderNav(currentView, onViewChange) {
             </div>
 
             <div class="hidden md:flex items-center gap-8 text-[10px] orbitron font-bold tracking-widest text-[#B0A8B9]">
-                <a href="#" class="hover:text-white transition-colors">ABOUT</a>
-                <a href="#categories" class="hover:text-white transition-colors">CATEGORIES</a>
-                <a href="#rnr" class="hover:text-white transition-colors">R&R</a>
-                <a href="#contact" class="hover:text-white transition-colors">CONTACT</a>
+                <a href="#about" class="nav-link hover:text-white transition-colors">ABOUT</a>
+                <a href="#categories" class="nav-link hover:text-white transition-colors">CATEGORIES</a>
+                <a href="#rnr" class="nav-link hover:text-white transition-colors">R&R</a>
+                <a href="#contact" class="nav-link hover:text-white transition-colors">CONTACT</a>
+                <a href="#" id="nav-leaderboard" class="hover:text-white transition-colors">LEADERBOARD</a>
             </div>
 
             <div class="h-6 w-[1px] bg-white/10 hidden md:block"></div>
@@ -25,7 +28,28 @@ export function renderNav(currentView, onViewChange) {
         </nav>
     `;
 
+    document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+      
+      if (onHome) {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        onViewChange("home");
+        setTimeout(() => {
+          document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+        }, 400); // Wait for transition
+      }
+    });
+  });
+
   document.getElementById("nav-logo").addEventListener("click", () => {
     onViewChange("home");
+  });
+
+  document.getElementById("nav-leaderboard").addEventListener("click", (e) => {
+    e.preventDefault();
+    onViewChange("leaderboard");
   });
 }
